@@ -1,0 +1,52 @@
+// prisma/schema.prisma
+
+// Generator untuk Prisma Client. Ini memungkinkan Anda menggunakan Prisma Client
+// di kode aplikasi Anda untuk berinteraksi dengan database.
+generator client {
+  provider = "prisma-client-js"
+}
+
+// DataSource untuk koneksi database.
+// Pastikan 'provider' adalah 'postgresql' dan 'url' mengambil nilai dari
+// environment variable 'DATABASE_URL' yang sudah Anda set di Vercel.
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // Ini akan membaca dari Vercel Environment Variables
+}
+
+// Model untuk Tabel 'Project'
+// Ini mencerminkan struktur data proyek Anda, dengan dukungan untuk multi-bahasa
+// dan array teknologi (TEXT[] di PostgreSQL).
+model Project {
+  id          Int      @id @default(autoincrement()) // ID unik, otomatis meningkat
+  title       String // Judul proyek
+  description String @db.Text // Deskripsi proyek, menggunakan TEXT untuk teks panjang
+  image       String // Path atau URL gambar proyek
+  link        String? // Link proyek, opsional (bisa null)
+  tech        String[] // Array of strings untuk teknologi (PostgreSQL TEXT[])
+  language    String   @default("id") // Bahasa proyek ('id' atau 'en'), default 'id'
+
+  // Anda bisa menambahkan indeks jika diperlukan, misalnya untuk pencarian cepat berdasarkan bahasa
+  // @@index([language])
+}
+
+// Model untuk Tabel 'Skill'
+// Ini mencerminkan struktur data skill Anda.
+model Skill {
+  id         Int    @id @default(autoincrement()) // ID unik, otomatis meningkat
+  name       String @unique // Nama skill, harus unik
+  percentage Int // Persentase penguasaan skill
+}
+
+// Model untuk Tabel 'Education'
+// Ini mencerminkan struktur data edukasi Anda, dengan dukungan untuk multi-bahasa.
+model Education {
+  id          Int      @id @default(autoincrement()) // ID unik, otomatis meningkat
+  institution String // Nama institusi
+  major       String? // Jurusan, opsional (bisa null)
+  period      String // Periode waktu (misal: "2023 - Sekarang")
+  language    String   @default("id") // Bahasa edukasi ('id' atau 'en'), default 'id'
+
+  // Anda bisa menambahkan indeks jika diperlukan
+  // @@index([language])
+}
