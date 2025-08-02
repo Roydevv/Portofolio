@@ -13,11 +13,11 @@ function toggleMenu() {
 <template>
   <header class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm shadow-md sticky top-0 z-50 transition-colors duration-300">
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-      
+
       <div class="text-2xl font-bold text-gray-800 dark:text-white">
-        Wahid Nurrohim
+        Roy Devgantara Purba
       </div>
-      
+
       <div class="flex items-center space-x-2 md:space-x-4">
         <ul class="hidden md:flex space-x-6">
           <li><a href="#profil" @click="isMenuOpen = false" class="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 font-medium transition-colors duration-300">{{ T.profil }}</a></li>
@@ -34,7 +34,7 @@ function toggleMenu() {
               <svg v-else key="moon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
             </transition>
           </button>
-          
+
           <button @click="toggleLanguage" class="text-gray-600 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400 font-bold text-sm border-2 border-gray-400 dark:border-gray-500 w-8 h-8 rounded-full focus:outline-none">
             {{ lang.toUpperCase() }}
           </button>
@@ -47,7 +47,7 @@ function toggleMenu() {
         </button>
       </div>
     </nav>
-    
+
     <div v-if="isMenuOpen" class="md:hidden bg-white/95 dark:bg-gray-900/95">
       <ul class="flex flex-col items-center space-y-4 py-4">
         <li><a href="#profil" @click="isMenuOpen = false" class="text-gray-800 dark:text-gray-200 font-medium">{{ T.profil }}</a></li>

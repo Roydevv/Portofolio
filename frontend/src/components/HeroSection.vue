@@ -36,7 +36,7 @@ function setAnimationTimeout(callback, delay) {
 
 // Teks sumber
 const fullGreeting = computed(() => T.value.hero_greeting)
-const fullName = computed(() => ' Wahid Nurrohim.') // Pakai computed agar reaktif jika perlu
+const fullName = computed(() => ' Roy Devgantara Purba.') // Pakai computed agar reaktif jika perlu
 const fullRole = computed(() => T.value.hero_role)
 
 // 1. Mengetik "Halo, Saya"
@@ -55,7 +55,7 @@ function typeGreeting() {
   type()
 }
 
-// 2. Mengetik " Wahid Nurrohim."
+// 2. Mengetik "Roy Devgantara Purba."
 function typeName() {
   let i = 0
   function type() {
@@ -109,7 +109,7 @@ function startAnimation() {
   showRoleCursor.value = false
   roleCharIndex = 0
   isErasingRole = false
-  
+
   setAnimationTimeout(typeGreeting, 500)
 }
 
@@ -121,7 +121,7 @@ onMounted(startAnimation)
 </script>
 
 <template>
-  <section id="profil" 
+  <section id="profil"
     class="bg-teal-50 dark:bg-gray-900 transition-colors duration-300 container mx-auto px-6 flex flex-col md:flex-row items-center min-h-screen pt-24 pb-12 md:py-0"
   >
     <div class="md:w-1/2 w-full self-stretch mb-10 md:mb-0 animate-slidein-left">
@@ -131,16 +131,16 @@ onMounted(startAnimation)
     <div class="md:w-1/2 md:pl-16 animate-slide-in-right">
       <p class="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wider mb-2">
         {{ T.hero_kicker }}
-      </p>      
-      
+      </p>
+
       <h1 class="text-4xl md:text-5xl font-bold text-gray-800 dark:text-gray-100 mb-1">
         <span>{{ typedGreeting }}</span><span class="text-orange-500">{{ typedName }}</span><span v-if="showNameCursor" class="blinking-cursor">|</span>
       </h1>
-      
+
       <h2 class="text-2xl font-medium text-gray-600 dark:text-gray-400 mb-6 h-8">
         {{ typedRole }}<span v-if="showRoleCursor" class="blinking-cursor">|</span>
       </h2>
-      
+
       <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
         {{ T.hero_description }}
       </p>

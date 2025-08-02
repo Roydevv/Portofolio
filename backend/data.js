@@ -3,9 +3,9 @@
 export const data_id = {
   education: [
     { id: 1, institution: 'Universitas Amikom Yogyakarta', major: 'Informatika', period: '2023 - Sekarang' },
-    { id: 2, institution: 'Sekolah Menengah Kejuruan AL IMAN 1 Banjar Agung', major: 'Teknik Komputer dan Jaringan', period: '2020 - 2023' },
-    { id: 3, institution: 'Madrasah Tsanawiyah AL IMAN Banjar Agung', major: '', period: '2017 - 2020' },
-    { id: 4, institution: 'Sekolah Dasar Negeri 01 Ringin Sari', major: '', period: '2011 - 2017' },
+    { id: 2, institution: 'Sekolah Menengah Atas Budhaya 2 Santo Agustinus', major: 'Teknik Komputer dan Jaringan', period: '2020 - 2023' },
+    { id: 3, institution: 'Sekolah Menengah Pertama 32 Jakarta', major: '', period: '2017 - 2020' },
+    { id: 4, institution: 'Sekolah Dasar Harvard', major: '', period: '2011 - 2017' },
   ],
   skills: [
     { name: 'JavaScript', percentage: 53 },
@@ -28,16 +28,16 @@ export const data_id = {
       link: '#'
     },
     { 
-      title: 'Website Toko Sepatu', 
-      description: 'Proyek tugas akhir mata kuliah Pemrograman Web, membuat toko online dengan fitur keranjang belanja dan checkout.',
-      image: '/images/lucien.jpg', // Ganti dengan path gambarmu
+      title: 'Website Game Token ABC TopUp', 
+      description: 'Proyek tugas akhir mata kuliah Pemrograman Web, membuat website topup all game online dan murchaindise, dilengkapi dengan sistem pembayaran 24 jam cepat dan flexsible .',
+      image: '/images/ABC TopUp.png', // Ganti dengan path gambarmu
       tech: ['Node.js', 'Express'],
       link: '#'
     },
     { 
-      title: 'Aplikasi buku elektronik Cendikia', 
-      description: 'Proyek Unit Kegiatan Mahasiswa Amikom Computer Club, membuat tempat membaca berupa E-book dengan fitur chat global dan membership.',
-      image: '/images/cendikia.jpg', // Ganti dengan path gambarmu
+      title: 'Akun Bisnis Sosial Media', 
+      description: 'Profil Bisnis Sewa Mobil Yogyakarta yang saya bangun bersama rekan dan senior, membuat konten dan edukasi seputar perjalanan wisata Yogyakarta.',
+      image: '/images/Joerental.png', // Ganti dengan path gambarmu
       tech: ['Node.js', 'Express'],
       link: '#'
     }
@@ -47,9 +47,9 @@ export const data_id = {
 export const data_en = {
   education: [
     { id: 1, institution: 'Amikom University Yogyakarta', major: 'Informatics', period: '2023 - Now' },
-    { id: 2, institution: 'Vocational School AL IMAN 1 Banjar Agung', major: 'Computer and Network Engineering', period: '2020 - 2023' },
-    { id: 3, institution: 'Madrasah Tsanawiyah AL IMAN Banjar Agung', major: '', period: '2017 - 2020' },
-    { id: 4, institution: 'State Elementary School 1 Ringin sari', major: '', period: '2011 - 2017' }
+    { id: 2, institution: 'Vocational School Budhaya 2 Santo Agustinus', major: 'Computer and Network Engineering', period: '2020 - 2023' },
+    { id: 3, institution: 'Junior High School 32 jakarta', major: '', period: '2017 - 2020' },
+    { id: 4, institution: 'Harvard Elementary School', major: '', period: '2011 - 2017' }
   ],
   skills: [ // Data skill mungkin sama, tapi tetap dipisah untuk konsistensi
     { name: 'JavaScript', percentage: 53 },
@@ -72,16 +72,16 @@ export const data_en = {
       link: '#'
     },
     { 
-      title: 'Shoe Store Website', 
-      description: 'Final project for Web Programming course, creating an online store with shopping cart and checkout features.',
+      title: 'ABC TopUp Game Token Website', 
+      description: 'Final project for the Web Programming course, creating a top-up website for all online games and merchandise, equipped with a fast and flexible 24-hour payment system.',
       image: '/images/lucien.jpg',
       tech: ['Node.js', 'Express'],
       link: '#'
     },
     { 
-      title: 'Cendikia E-Book Application', 
-      description: 'The Amikom Computer Club Student Activity Unit Project creates a reading place in the form of an e-book with global chat and membership features.',
-      image: '/images/cendikia.jpg',
+      title: 'Social Media Business Accounts', 
+      description: 'Yogyakarta Car Rental Business Profile that I built with colleagues and seniors, creating content and education about Yogyakarta tourism trips.',
+      image: '/images/joerental.png',
       tech: ['Node.js', 'Express'],
       link: '#'
     }
