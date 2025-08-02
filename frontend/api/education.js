@@ -1,27 +1,19 @@
 // frontend/api/education.js
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import { data_id, data_en } from '../../backend/data.js';
 
 export default async function handler(req, res) {
-  const lang = req.query.lang || 'id'; // Ambil bahasa dari query param
+  const lang = req.query.lang || 'id'; // Default ke 'id'
 
   try {
-    const education = await prisma.education.findMany({
-      where: {
-        language: lang, // Filter berdasarkan bahasa
-      },
-      orderBy: {
-        id: 'asc', // Urutkan dari id terkecil (paling lama ke terbaru)
-      },
-    });
+    const educationData = lang === 'en' ? data_en.education : data_id.education;
+
+    // Urutkan data jika perlu (contoh: dari id terkecil)
+    educationData.sort((a, b) => a.id - b.id);
 
     res.setHeader('Access-Control-Allow-Origin', '*');
-    res.status(200).json(education);
+    res.status(200).json(educationData);
   } catch (error) {
-    console.error('Error fetching education data from database:', error);
+    console.error('Error reading education data:', error);
     res.status(500).json({ message: 'Gagal mengambil data edukasi.' });
-  } finally {
-    await prisma.$disconnect();
   }
 }
